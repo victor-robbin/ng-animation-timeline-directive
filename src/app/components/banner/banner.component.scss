@@ -3,13 +3,33 @@
   grid-template-areas: "stack";
 }
 
+// :host(.supportCSS) {
+//   animation: parallax linear;
+//   animation-timeline: scroll();
+
+//   .img-wrapper {
+//     --parallax-speed: 5;
+//   }
+
+//   .info {
+//     --parallax-speed: -10;
+//   }
+
+//   @keyframes parallax {
+//     to {
+//       transform: translateY(calc(var(--parallax-speed) * 100px));
+//     }
+//   }
+// }
+
+.img-wrapper {
+  grid-area: stack;
+  position: relative;
+  overflow: hidden;
+  height: 90vh;
+}
+
 .img {
-  &-wrapper {
-    grid-area: stack;
-    position: relative;
-    overflow: hidden;
-    height: 90vh;
-  }
 
   position: absolute;
   width: 100%;
