@@ -1,0 +1,61 @@
+:host {
+  interpolate-size: allow-keywords;
+
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+
+  animation-name: translate-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 0% 20%;
+}
+
+.btn.home,
+.icon.home,
+.nav>ul {
+  animation-name: hide-btn;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 0% 20%;
+}
+
+.nav>ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 2em;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+@keyframes translate-header {
+  to {
+    width: max-content;
+  }
+}
+
+@keyframes hide-btn {
+  to {
+    scale: 0;
+    width: 0;
+    padding: 0;
+  }
+}
+
+@keyframes hide-txt {
+  to {
+    display: none;
+  }
+}
