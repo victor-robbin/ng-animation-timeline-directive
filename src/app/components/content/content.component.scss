@@ -3,15 +3,34 @@
 }
 
 .content-wrapper {
+  position: relative;
+  z-index: 1;
   margin: 0;
   padding-block: 4vw 0;
   list-style: none;
   width: min(90%, 65ch);
   margin-inline: auto;
+
+  &.supportCSS {
+    .content-item.img {
+      animation: fade linear;
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: 0% 50%;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+  }
 }
 
 .title,
-.text {
+.text,
+img {
   margin-block: 1em 0;
 }
 

@@ -1,32 +1,46 @@
 :host {
+  --img-height: 90vh;
+
   display: grid;
   grid-template-areas: "stack";
 }
 
-// :host(.supportCSS) {
-//   animation: parallax linear;
-//   animation-timeline: scroll();
+:host(.supportCSS) {
+  &::after {
+    content: '';
+    grid-area: stack;
+    z-index: 1;
+    transform: translateY(100%);
+    background: linear-gradient(to top, #fff, transparent);
+    animation: parallax linear;
+    animation-timeline: scroll();
+    --parallax-speed: 0;
+  }
 
-//   .img-wrapper {
-//     --parallax-speed: 5;
-//   }
+  .img-wrapper {
+    animation: parallax linear;
+    animation-timeline: scroll();
+    --parallax-speed: 15;
+  }
 
-//   .info {
-//     --parallax-speed: -10;
-//   }
+  .info {
+    animation: parallax linear;
+    animation-timeline: scroll();
+    --parallax-speed: -5;
+  }
 
-//   @keyframes parallax {
-//     to {
-//       transform: translateY(calc(var(--parallax-speed) * 100px));
-//     }
-//   }
-// }
+  @keyframes parallax {
+    to {
+      transform: translateY(calc(var(--parallax-speed) * 100px));
+    }
+  }
+}
 
 .img-wrapper {
   grid-area: stack;
   position: relative;
   overflow: hidden;
-  height: 90vh;
+  height: var(--img-height);
 }
 
 .img {

@@ -7,7 +7,7 @@ import { ContentComponent } from './components/content/content.component';
   standalone: true,
   imports: [
     HeaderComponent,
-    ContentComponent
+    ContentComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
