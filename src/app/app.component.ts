@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, computed, inject, ViewChild } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
 import { CssSupportDirective } from './directives/css-support.directive';
+import { ScrollClassDirective } from './directives/scroll-class.directive';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { CssSupportDirective } from './directives/css-support.directive';
     HeaderComponent,
     ContentComponent,
     CssSupportDirective,
+    ScrollClassDirective,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

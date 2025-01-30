@@ -1,2 +1,6 @@
-<app-header appCssSupport/>
+@if (false) {
+    <app-header appCssSupport/>
+}@else {
+    <app-header appScrollClass scrollClass="scrolled" [scrollThreshold]="100"/>
+}
 <app-content/>
