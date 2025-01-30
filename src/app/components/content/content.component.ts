@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { BannerComponent } from '../banner/banner.component';
 import { CssSupportDirective } from '../../directives/css-support.directive';
+import { CssSupportService } from '../../services/css-support.service';
 
 @Component({
   selector: 'app-content',
@@ -13,4 +14,7 @@ import { CssSupportDirective } from '../../directives/css-support.directive';
   styleUrl: './content.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContentComponent { }
+export class ContentComponent {
+  cssSupportSvc = inject(CssSupportService);
+  supportedCSS = this.cssSupportSvc.supportedCSS;
+}

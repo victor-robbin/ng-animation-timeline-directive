@@ -1,24 +1,18 @@
-import { Directive, effect, HostBinding, signal } from '@angular/core';
+import { Directive, effect, HostBinding, inject, signal } from '@angular/core';
+import { CssSupportService } from '../services/css-support.service';
 
 @Directive({
   selector: '[appCssSupport]',
   standalone: true,
 })
 export class CssSupportDirective {
-  supportedCSS = signal(false);
+  CssSupportSvc = inject(CssSupportService);
+
+  supportedCSS = this.CssSupportSvc.supportedCSS;
 
   @HostBinding('class') get hostClass() {
     return {
       'supportCSS': this.supportedCSS() === true,
     }
-  }
-
-  constructor() {
-    effect(() => {
-      const isSupported = CSS.supports('animation-timeline', 'scroll()');
-      if (isSupported) {
-        this.supportedCSS.set(true);
-      }
-    }, { allowSignalWrites: true });
   }
 }

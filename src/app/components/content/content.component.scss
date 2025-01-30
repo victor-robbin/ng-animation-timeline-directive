@@ -1,5 +1,6 @@
 :host {
   display: block;
+  padding-block: 0 64px;
 }
 
 .content-wrapper {
@@ -36,4 +37,17 @@ img {
 
 .title {
   font-weight: 600;
+}
+
+.dev-variant {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  display: grid;
+  background: #101414;
+  color: #fff;
+  line-height: 100%;
+  text-transform: uppercase;
+  padding: 16px;
 }
