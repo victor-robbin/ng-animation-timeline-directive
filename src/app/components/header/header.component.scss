@@ -1,6 +1,4 @@
 :host {
-  interpolate-size: allow-keywords;
-
   display: block;
   position: fixed;
   top: 0;
@@ -21,6 +19,7 @@
   animation-fill-mode: both;
   animation-timeline: scroll();
   animation-range: 0% 20%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .nav>ul {
@@ -46,9 +45,31 @@
   }
 }
 
+// @keyframes hide-btn {
+//   to {
+//     scale: 0;
+//     width: 0;
+//     padding: 0;
+//   }
+// }
 @keyframes hide-btn {
-  to {
-    scale: 0;
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    width: fit-content;
+  }
+
+  50% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    width: fit-content;
+  }
+
+  80% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    width: fit-content;
+  }
+
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
     width: 0;
     padding: 0;
   }

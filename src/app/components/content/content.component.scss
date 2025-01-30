@@ -12,7 +12,7 @@
   margin-inline: auto;
 
   &.supportCSS {
-    .content-item.img {
+    .content-item.img img {
       animation: fade linear;
       animation-fill-mode: both;
       animation-timeline: view();
@@ -22,7 +22,7 @@
     @keyframes fade {
       from {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(25vw);
       }
     }
   }
