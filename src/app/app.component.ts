@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
+import { CssSupportDirective } from './directives/css-support.directive';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { ContentComponent } from './components/content/content.component';
   imports: [
     HeaderComponent,
     ContentComponent,
+    CssSupportDirective,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

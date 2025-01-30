@@ -6,21 +6,25 @@
   width: 100%;
   z-index: 2;
 
+}
+
+:host(.supportCSS) {
   animation-name: translate-header;
   animation-fill-mode: both;
   animation-timeline: scroll();
   animation-range: 0% 20%;
+
+  .btn.home,
+  .icon.home,
+  .nav>ul {
+    animation-name: hide-btn;
+    animation-fill-mode: both;
+    animation-timeline: scroll();
+    animation-range: 0% 20%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
 }
 
-.btn.home,
-.icon.home,
-.nav>ul {
-  animation-name: hide-btn;
-  animation-fill-mode: both;
-  animation-timeline: scroll();
-  animation-range: 0% 20%;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
 
 .nav>ul {
   margin: 0;
