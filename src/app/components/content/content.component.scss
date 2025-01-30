@@ -3,6 +3,10 @@
   padding-block: 0 64px;
 }
 
+:host(.fade-in) {
+  border: 1px solid red;
+}
+
 .content-wrapper {
   position: relative;
   z-index: 1;

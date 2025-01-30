@@ -5,7 +5,6 @@
   right: 0;
   width: 100%;
   z-index: 2;
-
 }
 
 :host(.supportCSS) {
@@ -25,6 +24,55 @@
   }
 }
 
+:host(.scrolled) {
+  animation: 500 shrink forwards;
+
+  .btn.home,
+  .icon.home,
+  .nav {
+    animation: 500ms hide forwards;
+  }
+
+  @keyframes hide {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+
+    80% {
+      opacity: 0;
+      width: 0;
+      padding: 0;
+    }
+
+    100% {
+      opacity: 0;
+      width: 0;
+      padding: 0;
+    }
+  }
+
+  @keyframes shrink {
+    0% {
+      width: 100%;
+    }
+
+    50% {
+      width: 100%;
+    }
+
+    80% {
+      width: 50%;
+    }
+
+    100% {
+      width: 64px;
+    }
+  }
+}
 
 .nav>ul {
   margin: 0;
@@ -49,13 +97,6 @@
   }
 }
 
-// @keyframes hide-btn {
-//   to {
-//     scale: 0;
-//     width: 0;
-//     padding: 0;
-//   }
-// }
 @keyframes hide-btn {
   0% {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -76,11 +117,5 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
     width: 0;
     padding: 0;
-  }
-}
-
-@keyframes hide-txt {
-  to {
-    display: none;
   }
 }
