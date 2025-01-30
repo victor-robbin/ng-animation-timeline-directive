@@ -4,12 +4,12 @@
         <h2 class="title">Title goes here</h2>
         <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus autem mollitia, temporibus maiores recusandae harum quam illo ullam magnam neque numquam accusantium perspiciatis non optio obcaecati tempora maxime quisquam dicta earum exercitationem? Nesciunt, minima adipisci. Quasi dolor dicta consectetur deleniti voluptatibus in assumenda! Porro similique cum laudantium? Commodi pariatur dignissimos necessitatibus eum nam natus quasi asperiores voluptates rem animi, quam laboriosam iure exercitationem soluta sed vel ipsum maiores provident accusantium voluptate repellendus. Nobis aperiam illo, sunt, ad recusandae ducimus quam aliquid dolores obcaecati dignissimos error fugiat iste expedita, rem voluptate iure sed corrupti? Reiciendis, facilis natus perspiciatis incidunt odit aut a cum voluptas totam tempore vitae quasi quo recusandae, labore eveniet explicabo sed ad soluta expedita rerum porro doloribus. Distinctio esse dolore totam recusandae cum. Consectetur dolore reprehenderit aperiam nesciunt iure. Nemo quaerat soluta voluptatibus minima unde quam quibusdam. Iusto eaque quisquam consequuntur itaque quia ipsa a, necessitatibus sint voluptas harum, inventore dolores reiciendis totam, qui animi exercitationem illo. Aperiam, quis consequuntur deleniti voluptatum est doloremque eveniet sint exercitationem nesciunt quam. Incidunt iusto repellat repellendus debitis eum facilis dolores tempore maxime error, harum molestias, porro animi reiciendis magnam, non officia! Dignissimos, animi voluptates eos vero sint fugiat dolorum odit rem, et non illo sapiente voluptatum officia nesciunt assumenda aperiam vel omnis nostrum quas porro at. Tempora itaque voluptatem error consequuntur maxime fuga necessitatibus deserunt aliquam similique velit, minus quasi reprehenderit at recusandae corrupti temporibus, ex fugiat quibusdam aut enim accusamus tenetur ducimus magnam. Expedita nemo sint culpa quo, eius, dicta facere consequuntur distinctio ducimus voluptate sequi officia possimus voluptatem nesciunt ipsa a incidunt at tenetur consequatur placeat deleniti, iure enim explicabo rem. Distinctio atque ea ratione corporis exercitationem vero tempore provident!</p>
     </article>
-    @if(supportedCSS()===true){
+    @if(supportedCSS()){
         <article class="content-item img">
             <img src="assets/img/plant.jpg" alt="">
         </article>
     }@else {
-        <article class="content-item img" appVisibilityClass visibleClass="fade-in" [visibleThreshold]="0.2">
+        <article class="content-item img" appVisibilityClass visibleClass="fade-in" [visibleThreshold]="0">
             <img src="assets/img/plant.jpg" alt="">
         </article>
     }
