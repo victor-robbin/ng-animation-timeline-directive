@@ -1,17 +1,13 @@
 :host {
   --img-height: 90vh;
+  --bg-color: #fff;
 
   display: grid;
   grid-template-areas: "stack";
 }
 
 :host(.supportCSS) {
-  &::after {
-    content: '';
-    grid-area: stack;
-    z-index: 1;
-    transform: translateY(100%);
-    background: linear-gradient(to top, #fff, transparent);
+  .overlay {
     animation: parallax linear;
     animation-timeline: scroll();
     --parallax-speed: 0;
@@ -33,6 +29,34 @@
     to {
       transform: translateY(calc(var(--parallax-speed) * 100px));
     }
+  }
+}
+
+:host(.parallax) {
+  .img {
+    transition: transform 1000ms ease-out;
+  }
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: var(--img-height);
+    top: 100%;
+  }
+}
+
+.overlay {
+  grid-area: stack;
+  z-index: 1;
+  transform: translateY(100%);
+  background: linear-gradient(to top, var(--bg-color), transparent);
+
+  &::after {
+    content: '';
+    background: var(--bg-color);
+    position: absolute;
+    inset: 0;
+    translate: 0 100%;
   }
 }
 
